@@ -32,14 +32,14 @@ class Songs extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, nombre, created_by, created_at', 'required'),
+			array('name', 'required'),
 			array('id, status', 'numerical', 'integerOnly'=>true),
-			array('nombre, created_by, updated_by', 'length', 'max'=>45),
-			array('descripcion', 'length', 'max'=>100),
+			array('name, created_by, updated_by', 'length', 'max'=>45),
+			array('description', 'length', 'max'=>100),
 			array('updated_at, deleted_at', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, nombre, descripcion, status, created_by, updated_by, created_at, updated_at, deleted_at', 'safe', 'on'=>'search'),
+			array('id, nombre, description, status, created_by, updated_by, created_at, updated_at, deleted_at', 'safe', 'on'=>'search'),
 		);
 	}
 

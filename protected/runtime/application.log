@@ -3144,3 +3144,630 @@ Stack trace:
 REQUEST_URI=/yii-framework/music/undefinedhtc/sepia.htc
 HTTP_REFERER=http://localhost/yii-framework/music/songs
 ---
+2015/02/14 20:39:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "create".' in C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('create')
+#1 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/music/create
+HTTP_REFERER=http://localhost/music/songs
+---
+2015/02/14 20:43:47 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Login Required' in C:\xampp\htdocs\yii-framework\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 C:\xampp\htdocs\yii-framework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#2 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('create')
+#9 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/create')
+#10 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/music/songs/create
+HTTP_REFERER=http://localhost/music/songs
+---
+2015/02/14 20:44:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "songs".' in C:\xampp\htdocs\yii-framework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CController.php(270): CController->missingAction('songs')
+#1 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('songs')
+#2 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/songs/cre...')
+#3 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/music/songs/songs/create
+HTTP_REFERER=http://localhost/music/songs/
+---
+2015/02/14 20:55:49 [error] [php] Undefined index: Songs (C:\xampp\htdocs\music\protected\controllers\SongsController.php:68)
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/create
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (68)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 20:56:13 [error] [php] Array to string conversion (C:\xampp\htdocs\music\protected\controllers\SongsController.php:68)
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/create
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (68)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 20:57:05 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (72)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 20:57:05 [error] [php] Array to string conversion (C:\xampp\htdocs\music\protected\controllers\SongsController.php:95)
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/create
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (95)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 20:57:43 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (72)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 20:57:43 [error] [php] Array to string conversion (C:\xampp\htdocs\music\protected\controllers\SongsController.php:95)
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/create
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (95)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 21:05:30 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (72)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 21:05:30 [error] [php] Array to string conversion (C:\xampp\htdocs\music\protected\controllers\SongsController.php:95)
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/create
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (95)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 21:08:36 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (70)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 21:18:15 [error] [exception.CException] exception 'CException' with message 'Property "Songs.nombre" is not defined.' in C:\xampp\htdocs\yii-framework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('nombre')
+#1 C:\xampp\htdocs\music\protected\views\songs\index.php(17): CActiveRecord->__get('nombre')
+#2 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-framework\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\music\protected\controllers\SongsController.php(54): CController->render('index', Array)
+#7 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(49): SongsController->actionIndex()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('')
+#17 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs')
+#18 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/music/songs
+---
+2015/02/14 21:18:37 [error] [exception.CException] exception 'CException' with message 'Property "Songs.descripcion" is not defined.' in C:\xampp\htdocs\yii-framework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('descripcion')
+#1 C:\xampp\htdocs\music\protected\views\songs\index.php(19): CActiveRecord->__get('descripcion')
+#2 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-framework\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\music\protected\controllers\SongsController.php(54): CController->render('index', Array)
+#7 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(49): SongsController->actionIndex()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('')
+#17 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs')
+#18 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/music/songs
+---
+2015/02/14 21:18:58 [error] [exception.CException] exception 'CException' with message 'Property "Songs.descripcion" is not defined.' in C:\xampp\htdocs\yii-framework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('descripcion')
+#1 C:\xampp\htdocs\music\protected\views\songs\index.php(40): CActiveRecord->__get('descripcion')
+#2 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-framework\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\music\protected\controllers\SongsController.php(54): CController->render('index', Array)
+#7 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(49): SongsController->actionIndex()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('')
+#17 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs')
+#18 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/music/songs
+---
+2015/02/14 21:19:12 [error] [exception.CException] exception 'CException' with message 'Property "Songs.descripcion" is not defined.' in C:\xampp\htdocs\yii-framework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('descripcion')
+#1 C:\xampp\htdocs\music\protected\views\songs\index.php(40): CActiveRecord->__get('descripcion')
+#2 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-framework\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\music\protected\controllers\SongsController.php(54): CController->render('index', Array)
+#7 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(49): SongsController->actionIndex()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('')
+#17 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs')
+#18 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/music/songs
+---
+2015/02/14 21:19:24 [error] [exception.CException] exception 'CException' with message 'Property "Songs.descripcion" is not defined.' in C:\xampp\htdocs\yii-framework\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\db\ar\CActiveRecord.php(145): CComponent->__get('descripcion')
+#1 C:\xampp\htdocs\music\protected\views\songs\index.php(40): CActiveRecord->__get('descripcion')
+#2 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\yii-framework\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#6 C:\xampp\htdocs\music\protected\controllers\SongsController.php(54): CController->render('index', Array)
+#7 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(49): SongsController->actionIndex()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('')
+#17 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs')
+#18 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/music/songs
+---
+2015/02/14 21:31:29 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (70)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 21:33:12 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (70)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 21:36:28 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (70)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 21:36:53 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (70)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 21:37:07 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (70)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 21:49:20 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (70)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 21:53:40 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (70)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 22:04:22 [error] [php] include(Erros.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii-framework\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\music\protected\controllers\SongsController.php(64): spl_autoload_call()
+#1 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(49): SongsController->actionCreate()
+#2 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#7 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#10 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#11 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/create
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (64)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/14 22:09:19 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (70)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/15 07:33:39 [warning] [application] Failed to set unsafe attribute "name" of "Songs".
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (70)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/16 04:23:52 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii-framework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/view/song...')
+#10 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/music/songs/view/songs/create
+HTTP_REFERER=http://localhost/music/songs/view/2
+---
+2015/02/16 04:24:50 [error] [php] include(Songs_Files.php): failed to open stream: No such file or directory (C:\xampp\htdocs\yii-framework\framework\YiiBase.php:427)
+Stack trace:
+#0 C:\xampp\htdocs\music\protected\controllers\SongsController.php(63): spl_autoload_call()
+#1 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(49): SongsController->actionCreate()
+#2 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#7 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#9 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#10 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#11 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/create
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (63)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/16 04:26:03 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`music`.`songs_files`, CONSTRAINT `fk_file_id_files` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `songs_files` (`file_id`, `song_id`, `created_by`) VALUES (:yp0, :yp1, :yp2).
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (76)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/16 04:27:34 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`music`.`songs_files`, CONSTRAINT `fk_file_id_files` FOREIGN KEY (`file_id`) REFERENCES `files` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION). The SQL statement executed was: INSERT INTO `songs_files` (`file_id`, `song_id`, `url`, `created_by`) VALUES (:yp0, :yp1, :yp2, :yp3).
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (77)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/16 04:49:08 [error] [php] fopen(/files/lirycs/2_1.txt): failed to open stream: No such file or directory (C:\xampp\htdocs\music\protected\controllers\SongsController.php:261)
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(49): SongsController->actionCreate()
+#1 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#6 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#9 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#10 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/create
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (261)
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (74)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/16 04:50:01 [error] [php] fopen(/files/Lirycs/2_1.txt): failed to open stream: No such file or directory (C:\xampp\htdocs\music\protected\controllers\SongsController.php:261)
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(49): SongsController->actionCreate()
+#1 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#6 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#9 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#10 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/create
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (261)
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (74)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/16 05:21:29 [error] [php] fopen(files/Tabs/2_2.txt): failed to open stream: No such file or directory (C:\xampp\htdocs\music\protected\views\songs\view.php:41)
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CBaseController.php(95): SongsController->renderInternal()
+#1 C:\xampp\htdocs\yii-framework\framework\web\CController.php(869): SongsController->renderFile()
+#2 C:\xampp\htdocs\yii-framework\framework\web\CController.php(782): SongsController->renderPartial()
+#3 C:\xampp\htdocs\music\protected\controllers\SongsController.php(204): SongsController->render()
+#4 unknown(0): SongsController->actionView()
+#5 C:\xampp\htdocs\yii-framework\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#6 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#9 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#11 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#12 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#13 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#15 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#16 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#17 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/view/2
+in C:\xampp\htdocs\music\protected\views\songs\view.php (41)
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (204)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/16 05:34:23 [error] [php] Undefined variable: songs_files (C:\xampp\htdocs\music\protected\views\songs\view.php:26)
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CController.php(869): SongsController->renderFile()
+#1 C:\xampp\htdocs\yii-framework\framework\web\CController.php(782): SongsController->renderPartial()
+#2 C:\xampp\htdocs\music\protected\controllers\SongsController.php(209): SongsController->render()
+#3 unknown(0): SongsController->actionView()
+#4 C:\xampp\htdocs\yii-framework\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#8 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#10 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#11 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#12 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#13 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#14 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#15 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/view/2
+in C:\xampp\htdocs\music\protected\views\songs\view.php (26)
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (209)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/16 05:45:44 [error] [exception.CException] exception 'CException' with message 'Property "Songs_Files.url" is not defined.' in C:\xampp\htdocs\yii-framework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('url', 'Prueba')
+#1 C:\xampp\htdocs\music\protected\controllers\SongsController.php(78): CActiveRecord->__set('url', 'Prueba')
+#2 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(49): SongsController->actionCreate()
+#3 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('create')
+#12 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/create')
+#13 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/music/songs/create
+HTTP_REFERER=http://localhost/music/songs/view/2
+---
+2015/02/17 04:53:34 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in C:\xampp\htdocs\yii-framework\framework\web\auth\CAccessControlFilter.php:182
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('createpartitura')
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/createpar...')
+#9 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/music/songs/createpartitura
+HTTP_REFERER=http://localhost/music/songs/view/2
+---
+2015/02/17 05:15:26 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii-framework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('createpartitura')
+#9 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/createpar...')
+#10 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/music/songs/createpartitura/2
+HTTP_REFERER=http://localhost/music/songs/view/2
+---
+2015/02/17 05:29:33 [error] [php] Undefined index: Files (C:\xampp\htdocs\music\protected\controllers\SongsController.php:98)
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): SongsController->runAction()
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): SongsController->filterAccessControl()
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): SongsController->runActionWithFilters()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): SongsController->run()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\music\index.php(13): CWebApplication->run()
+REQUEST_URI=/music/songs/createpartitura/
+in C:\xampp\htdocs\music\protected\controllers\SongsController.php (98)
+in C:\xampp\htdocs\music\index.php (13)
+2015/02/17 05:52:17 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii-framework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('createpartitura')
+#9 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/createpar...')
+#10 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/music/songs/createpartitura
+HTTP_REFERER=http://localhost/music/songs/view/2
+---
+2015/02/17 05:53:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "createpartitura2".' in C:\xampp\htdocs\yii-framework\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CController.php(270): CController->missingAction('createpartitura...')
+#1 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('createpartitura...')
+#2 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/createpar...')
+#3 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/music/songs/createpartitura2
+HTTP_REFERER=http://localhost/music/songs/view/2
+---
+2015/02/17 06:04:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii-framework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('createpartitura')
+#9 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/createpar...')
+#10 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/music/songs/createpartitura/2
+HTTP_REFERER=http://localhost/music/songs/view/2
+---
+2015/02/17 06:05:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii-framework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('createpartitura')
+#9 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/createpar...')
+#10 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/music/songs/createpartitura/2
+HTTP_REFERER=http://localhost/music/songs/view/2
+---
+2015/02/17 06:05:46 [error] [exception.CException] exception 'CException' with message 'Property "Songs_Files.url" is not defined.' in C:\xampp\htdocs\yii-framework\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\db\ar\CActiveRecord.php(161): CComponent->__set('url', 'files/Partitura...')
+#1 C:\xampp\htdocs\music\protected\controllers\SongsController.php(113): CActiveRecord->__set('url', 'files/Partitura...')
+#2 [internal function]: SongsController->actionCreatePartitura('2')
+#3 C:\xampp\htdocs\yii-framework\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(SongsController), Array)
+#4 C:\xampp\htdocs\yii-framework\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SongsController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\yii-framework\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#8 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#12 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('createpartitura')
+#14 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/createpar...')
+#15 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/music/songs/createpartitura/2
+HTTP_REFERER=http://localhost/music/songs/view/2
+---
+2015/02/17 06:23:50 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii-framework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/view/file...')
+#10 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/music/songs/view/files/Partituras/Es%20Jes%C3%BAs.pdf
+HTTP_REFERER=http://localhost/music/songs/view/2
+---
+2015/02/17 07:03:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\xampp\htdocs\yii-framework\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\yii-framework\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\yii-framework\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\yii-framework\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\yii-framework\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\yii-framework\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\yii-framework\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\yii-framework\framework\web\CWebApplication.php(141): CWebApplication->runController('songs/view/file...')
+#10 C:\xampp\htdocs\yii-framework\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\music\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/music/songs/view/files/Partituras/Cantare%20De%20Tu%20Amor.PDF
+HTTP_REFERER=http://localhost/music/songs/view/2
+---

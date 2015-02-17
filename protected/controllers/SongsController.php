@@ -17,32 +17,6 @@ class SongsController extends Controller
 	}
 
 	/**
-	 * Specifies the access control rules.
-	 * This method is used by the 'accessControl' filter.
-	 * @return array access control rules
-	 */
-	public function accessRules()
-	{
-		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
-			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
-				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
-			),
-			array('deny',  // deny all users
-				'users'=>array('*'),
-			),
-		);
-	}
-
-	/**
 	 * Lists all models.
 	 */
 	public function actionIndex()
@@ -60,37 +34,114 @@ class SongsController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model = new Songs;
+		$Songs_Files = new Songs_Files;
 		$error = 0;
-		$contenido = '';
-		$mensaje = '';
+		$data = '';
+		$message = '';
 
-		if(isset($_POST['Songs']))
+		if(isset($_POST['Files']))
 		{
-			$model->attributes=$_POST['Songs'];
+			$file_id = $_POST['Files']['file_id'];
+			$song_id = $_POST['Files']['song_id'];
+			$file = $_POST['Files']['file'];
 
-			try
+			if ($this->CreateTxt($file_id, $song_id, $file) )
 			{
-				if($model->save())
+				$Songs_Files->file_id = $file_id;
+				$Songs_Files->song_id = $song_id;
+				$Songs_Files->created_by = 'sebastian.alvarez';
+
+				try
 				{
-					$contenido = $model->id;
-					$mensaje = "Cancion creada correctamente";
+					if($Songs_Files->save())
+					{
+						$data = $Songs_Files->id;
+						$message = "Transcripcion creada correctamente";
+					}
+					else
+					{
+						$error = 1;
+						$message = "No se ha podido guardar en la base de datos";
+					}
 				}
-				else
+				catch(Exception $e)
 				{
 					$error = 1;
-					$mensaje = "No se ha podido guardar";
+					$message = "No se ha podido guardar, intentelo de nuevo";
+					$data = $e;
+					$this->handleErrors($e);
 				}
 			}
-			catch(Exception $e)
+			else
 			{
 				$error = 1;
-				$mensaje = "No se ha podido guardar, intentelo de nuevo";
-				$contenido = $e;
+				$message = "No se ha podido crear el archivo";
 			}
 		}
 
-		return json_enconde(array('error' => $error, 'mensaje' => $mensaje, 'contenido' => $contenido));
+		echo json_encode(array('error' => $error, 'message' => $message, 'data' => $data));
+	}
+
+
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionCreatePartitura($id)
+	{
+		$Songs_Files = new Songs_Files;
+		$error = 0;
+		$data = array();
+		$message = '';
+
+		if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') 
+		{
+		    //obtenemos el archivo a subir
+		    $file = $_FILES['archivo']['name'];
+		 
+		    //comprobamos si existe un directorio para subir el archivo
+		    //si no es así, lo creamos
+		    if(!is_dir("files/Partituras/")) 
+		        mkdir("files/Partituras/", 0777);
+		     
+		    //comprobamos si el archivo ha subido
+		    if ($file && move_uploaded_file($_FILES['archivo']['tmp_name'], "files/Partituras/".$file))
+		    {
+				$Songs_Files->file_id = 4;
+				$Songs_Files->song_id = $id;
+				$Songs_Files->url = "files/Partituras/".$file;
+				$Songs_Files->description = $file;
+				$Songs_Files->created_by = 'sebastian.alvarez';
+
+				try
+				{
+					if($Songs_Files->save())
+					{
+						$data = array('saved_id' => $Songs_Files->id, 'description' => $file, 'url' => $Songs_Files->url);
+						$message = "Transcripcion creada correctamente";
+					}
+					else
+					{
+						$error = 1;
+						$message = "No se ha podido guardar en la base de datos";
+					}
+				}
+				catch(Exception $e)
+				{
+					$error = 1;
+					$message = "No se ha podido guardar, intentelo de nuevo";
+					$data = $e;
+					$this->handleErrors($e);
+				}	    
+			}
+			else
+			{
+		    	throw new Exception("Error Processing Request", 1);   
+			}
+		}
+
+		echo json_encode(array('error' => $error, 'message' => $message, 'data' => $data));
 	}
 
 	/**
@@ -179,7 +230,18 @@ class SongsController extends Controller
 	 */
 	public function actionView($id)
 	{
-		//
+		$Song = Songs::model()->findByPk($id);
+		$Songs_Files = Songs_Files::model()->findAll('song_id = :song_id',array(':song_id'=>$id));
+
+		$songs_files = array();
+		foreach ($Songs_Files as $key => $value) {
+			$songs_files[] = $value->file_id;
+		}
+
+		$title = $Song->name;
+		$this->render('view',array(
+			'Song'=>$Song, 'songs_files' => $songs_files, 'Songs_Files' => $Songs_Files, 'title' => $title
+		));
 	}
 
 
@@ -198,4 +260,53 @@ class SongsController extends Controller
 		return $model;
 	}
 
+
+	public function handleErrors($e)
+	{
+		$Errors = new Errors;
+		try
+		{
+			$Errors->description = $e;
+			$Errors->save();
+		}catch(Exception $e)
+		{
+			$miarchivo=fopen('errors.txt','w');//abrir archivo, nombre archivo, modo apertura
+			fwrite($miarchivo, $e);
+			fclose($miarchivo); //cerrar archivo
+		}
+	}
+
+
+	public function CreateTxt($file_id, $song_id, $file)
+	{
+		if ($file_id == 1)
+			$module = 'Lirycs';
+		else
+		if ($file_id == 2)
+			$module = 'Tabs';
+		else
+		if ($file_id == 3)
+			$module = 'Chords';
+		else
+		if ($file_id == 4)
+			$module = 'Partituras';
+		else
+		if ($file_id == 5)
+			$module = 'Media';
+		else
+			return false;
+
+		try
+		{
+			//Abrir archivo, nombre archivo, modo apertura
+			$txt = fopen('files/'.$module.'/'.$song_id.'_'.$file_id.'.txt','w');
+			fwrite($txt, $file);
+			fclose($txt);
+
+			return true;
+		}catch(Exception $e)
+		{
+			return false;
+		}
+	}
 }

@@ -18,6 +18,12 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/assets/table/table.css"/>
  	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/assets/table/listview.css"/> 
 
+ 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/assets/tabbed-navigation/css/reset.css"/> 
+ 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/assets/tabbed-navigation/css/style.css"/> 
+
+
+ 		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
@@ -50,7 +56,7 @@
 
 
 		<!-- JS para menu -->
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/listview/js/snap.svg-min.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/menu/js/modernizr.custom.25376.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/menu/js/classie.js"></script>
@@ -64,6 +70,8 @@
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/modal/js/css-filters-polyfill.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/modal/js/cssParser.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/modal/js/modalEffects.js"></script>
+
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/assets/tabbed-navigation/js/main.js"></script>
 
 	<script>
 			(function() {
