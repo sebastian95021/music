@@ -3,7 +3,6 @@
 	<button class="btn-orange" id="showMenu">Menu</button>
 </header>
 
-
 <article style="padding:50px 100px;">
 <input type="hidden" id="txtSongId" value="<?php echo $Song->id; ?>">
 <div class="container">
@@ -76,8 +75,8 @@
 
 	<div class="partitura tab-content">
 		<form enctype="multipart/form-data" class="form">
-			<input name="archivo" type="file" id="imagen"/>
-			<input type="button" class="btn-orange" id="saveChords" value="Guardar" onclick="SavePartitura(3)">
+			<input name="archivo" type="file" class="imagen" id="imagen"/>
+			<input type="button" class="btn-orange" id="saveChords" value="Guardar" onclick="SavePartitura(4)">
 		</form>
 
 		<table id="tblPartituras" class="table table-bordered table-hover">
@@ -100,7 +99,30 @@
 
 
 	<div class="audio tab-content">
-		<input type="file">
+		<form enctype="multipart/form-data" class="formMedia">
+			<input name="archivo" type="file" class="imagen" id="media"/>
+			<input type="button" class="btn-orange" id="saveMedia" value="Guardar" onclick="SaveMedia(5)">
+		</form>
+
+		<table id="tblMedia" class="table table-bordered table-hover">
+			<thead>
+			     <th>Nombre de archivo</th>
+			     <th>Acciones</th>
+			</thead>
+			<tbody>
+		<?php foreach ($Songs_Files as $key => $value) { ?>
+			<?php if ($value->file_id == 5) { ?>
+				<tr>
+					<td><?php echo CHtml::encode($value->description); ?></td>
+					<td><audio src="/music/<?php echo CHtml::encode($value->url); ?>" controls loop>
+							<p>Tu navegador no implementa el elemento audio.</p>
+						</audio>
+					</td>
+				</tr>
+			<?php } ?>
+		<?php } ?>
+ 			</tbody>
+		</table>
 	</div>
 </article>
 
@@ -149,7 +171,7 @@ function Save(file_id)
 $(':file').change(function()
     {
         //obtenemos un array con los datos del archivo
-        var file = $("#imagen")[0].files[0];
+        var file = $(".imagen")[0].files[0];
         //obtenemos el nombre del archivo
         var fileName = file.name;
         //obtenemos la extensión del archivo
@@ -191,6 +213,45 @@ function SavePartitura(file_id)
 							'<td><a style="color:black;" target="_blank" href="/music/'+data.data.url+'">Ver</a></td>'
 						'</tr>';
             	$('#tblPartituras tbody').append(html);
+            },
+            //si ha ocurrido un error
+            error: function(){
+            	alert('no se ha podido guardar el archivo, intentelo de nuevo');
+            }
+        });
+}
+
+ //al enviar el formulario
+function SaveMedia(file_id)
+{
+		song_id = $('#txtSongId').val();
+        //información del formulario
+        var formData = new FormData($(".formMedia")[0]);
+
+        //hacemos la petición ajax  
+        $.ajax({
+            url: '/music/songs/createmedia/'+song_id,
+            type: 'POST',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            //mientras enviamos el archivo
+            beforeSend: function(){
+				//   
+            },
+            //una vez finalizado correctamente
+            success: function(data){
+            	data = jQuery.parseJSON(data);
+
+            	html = '<tr>'+
+							'<td>'+data.data.description+'</td>'+
+							'<td><audio src="/music/'+data.data.url+'" controls loop>'+
+									'<p>Tu navegador no implementa el elemento audio.</p>'+
+								'</audio>'+
+							'</td>'+
+						'</tr>';
+            	$('#tblMedia tbody').append(html);
             },
             //si ha ocurrido un error
             error: function(){

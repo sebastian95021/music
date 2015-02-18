@@ -48,6 +48,7 @@ return array(
 
 				//Customize
 				'<songs:\w+>/<id:\d+>'=>'<controller>/createpartitura',
+				'<songs:\w+>/<id:\d+>'=>'<controller>/createmedia',
 			),
 		),
 		

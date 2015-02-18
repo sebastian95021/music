@@ -144,6 +144,68 @@ class SongsController extends Controller
 		echo json_encode(array('error' => $error, 'message' => $message, 'data' => $data));
 	}
 
+
+
+	/**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionCreateMedia($id)
+	{
+		$Songs_Files = new Songs_Files;
+		$error = 0;
+		$data = array();
+		$message = '';
+
+		if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') 
+		{
+		    //obtenemos el archivo a subir
+		    $file = $_FILES['archivo']['name'];
+		 
+		    //comprobamos si existe un directorio para subir el archivo
+		    //si no es así, lo creamos
+		    if(!is_dir("files/Media/")) 
+		        mkdir("files/Media/", 0777);
+		     
+		    //comprobamos si el archivo ha subido
+		    if ($file && move_uploaded_file($_FILES['archivo']['tmp_name'], "files/Media/".$file))
+		    {
+				$Songs_Files->file_id = 5;
+				$Songs_Files->song_id = $id;
+				$Songs_Files->url = "files/Media/".$file;
+				$Songs_Files->description = $file;
+				$Songs_Files->created_by = 'sebastian.alvarez';
+
+				try
+				{
+					if($Songs_Files->save())
+					{
+						$data = array('saved_id' => $Songs_Files->id, 'description' => $file, 'url' => $Songs_Files->url);
+						$message = "Transcripcion creada correctamente";
+					}
+					else
+					{
+						$error = 1;
+						$message = "No se ha podido guardar en la base de datos";
+					}
+				}
+				catch(Exception $e)
+				{
+					$error = 1;
+					$message = "No se ha podido guardar, intentelo de nuevo";
+					$data = $e;
+					$this->handleErrors($e);
+				}	    
+			}
+			else
+			{
+		    	throw new Exception("Error Processing Request", 1);   
+			}
+		}
+
+		echo json_encode(array('error' => $error, 'message' => $message, 'data' => $data));
+	}
+
 	/**
 	 * Updates a particular model.
 	 * If update is successful, the browser will be redirected to the 'view' page.
